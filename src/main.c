@@ -5,7 +5,11 @@
 #include "../include/bmp.h"
 
 extern void invert_image(unsigned char *pixels, unsigned int width, unsigned int height, unsigned int components);
-extern int invert_image_avx2(unsigned char *pixels, unsigned int width, unsigned int height, unsigned int components);
+
+extern void invert_image_avx2(unsigned char *pixels, unsigned int width, unsigned int height, unsigned int components);
+
+
+extern void grayscale_image(unsigned char *pixels, unsigned int width, unsigned int height, unsigned int components);
 
 
 int main() {
@@ -18,9 +22,9 @@ int main() {
 
     printf("Image Dimensions: %d x %d\n", width, height);
 
-    invert_image_avx2(pixels, width, height, 3); // R, G, B -> 3 (RGBA -> 4)
+    grayscale_image(pixels, width, height, 3); // R, G, B -> 3 (RGBA -> 4)
 
-    unsigned int write_err = loadbmp_encode_file("images/out/invert/pepper2.bmp", pixels, width, height, LOADBMP_RGB);
+    unsigned int write_err = loadbmp_encode_file("images/out/grayscale/pepper.bmp", pixels, width, height, LOADBMP_RGB);
 
     if (write_err) printf("Error saving BMP: %u\n", write_err);
 
