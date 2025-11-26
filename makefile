@@ -9,7 +9,7 @@ ASM_DIR = asm
 BUILD_DIR = build
 
 C_SRCS = $(SRC_DIR)/main.c $(SRC_DIR)/bmp.c
-ASM_SRCS = $(ASM_DIR)/filters/invert.asm
+ASM_SRCS = $(ASM_DIR)/filters/invert.asm $(ASM_DIR)/filters/invert_avx2.asm
 
 C_OBJS = $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(C_SRCS))
 ASM_OBJS = $(patsubst $(ASM_DIR)/filters/%.asm,$(BUILD_DIR)/%.o,$(ASM_SRCS))
