@@ -28,7 +28,7 @@ invert_image_avx2:
     and r13, -32 ; round down to nearest multiple of 32 (basically r13-32 butwithout the risk of integer underflow)
 
 .vector_loop:
-    cmp rbx, r12
+    cmp rbx, r13
     jae .cleanup
 
     vmovdqu ymm0, [r8+rbx]      ; loads 32 bytes into vector register
