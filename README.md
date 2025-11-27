@@ -2,6 +2,12 @@
 
 The side project of suffering and despair
 
+## Examples
+
+[My test images](https://github.com/kowanietz/nasm-image-processing/tree/master/images)
+
+[Some results](https://github.com/kowanietz/nasm-image-processing/tree/master/images/out)
+
 ## Filters
 
 ### Image Inversion
